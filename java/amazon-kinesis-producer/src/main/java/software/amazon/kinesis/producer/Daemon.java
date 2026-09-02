@@ -464,6 +464,7 @@ public class Daemon {
                 } catch (IOException e) {
                     fatalError("Unexpected error connecting to child process", e, false);
                 } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
                     fatalError("Unexpected error", e);
                 }
             }
